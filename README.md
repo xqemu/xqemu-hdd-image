@@ -58,12 +58,12 @@ machine: QEMU!
 But before we can boot it, we need to create a virtual hard disk. Use `qemu-img`
 to create an 8G qcow2 formatted image:
 
-	qemu-img create -f qcow2 xbox.qcow2 8G
+	qemu-img create -f qcow2 xbox_hdd.qcow2 8G
 
 Now you have an empty virtual drive. Let's fire up our virtual machine:
 
 	qemu-system-i386 \
-		-drive index=0,media=disk,file=xbox.qcow2 \
+		-drive index=0,media=disk,file=xbox_hdd.qcow2 \
 		-drive index=1,media=cdrom,file=linux.iso
 
 Next follow the on-screen instructions, which basically go as follows:
